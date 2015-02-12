@@ -10,30 +10,29 @@
         .contentHolder { position:relative; margin:0px auto; padding:0px; width: 600px; height: 400px; overflow: hidden; }
         .contentHolder .content { background-image: url('./azusa.jpg'); width: 1280px; height: 720px; }
         .spacer { text-align:center }
+
+        /* Change the alignment of scrollbars */
+        /* Recommended: You can just modify the CSS file directly. */
+        .ps-container .ps-scrollbar-x-rail {
+          top: 3px;
+          bottom: auto; /* If using `top`, there shouldn't be a `bottom`. */
+        }
+        .ps-container .ps-scrollbar-y-rail {
+          left: 3px;
+          right: auto; /* If using `left`, there shouldn't be a `right`. */
+        }
       </style>
     <script>
       jQuery(document).ready(function ($) {
         "use strict";
         $('#Default').perfectScrollbar();
-        $('#NoWheelPropagation').perfectScrollbar({wheelPropagation:true});
       });
     </script>
   </head>
   <body>
-    <h1 style="text-align:center">Default; wheelPropagation:false</h1>
     <div id="Default" class="contentHolder">
       <div class="content">
       </div>
     </div>
-    <h1 style="text-align:center">wheelPropagation:true</h1>
-    <div id="NoWheelPropagation" class="contentHolder">
-      <div class="content">
-      </div>
-    </div>
-    <div class="spacer">
-      Note<br>that<br>there<br>is<br>plenty<br>of<br>text<br>after<br>the<br>image<br>to<br>ensure<br>that<br>it<br>is<br>possible<br>to<br>down<br>
-      after<br>the<br>bottom<br>of<br>the<br>image<br>has<br>been<br>reached<br>to<br>enable<br>the<br>wheel<br>propagation<br>to<br>be<br>tested<br>
-    </div>
   </body>
 </html>
-

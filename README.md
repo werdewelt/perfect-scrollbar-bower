@@ -1,4 +1,4 @@
-perfect-scrollbar
+perfect-scrollbar [![Travis CI](https://travis-ci.org/noraesae/perfect-scrollbar.svg?branch=master)](https://travis-ci.org/noraesae/perfect-scrollbar)
 =================
 
 Tiny but perfect jQuery scrollbar plugin
@@ -6,14 +6,14 @@ Tiny but perfect jQuery scrollbar plugin
 Why perfect-scrollbar?
 ------------------
 
-I worked on the personal project recently, and I was trying to find the jQuery scrollbar plugin that's *perfect*. But there was no *perfect* scrollbar plugin. That's why I decided to make one.
+I worked on a personal project recently, and I was trying to find the jQuery scrollbar plugin that's *perfect*. But there was no *perfect* scrollbar plugin. That's why I decided to make one.
 
-perfect-scrollbar is very tiny but *perfect*(for me, and maybe for the most of developers) jQuery scrollbar plugin.  
+perfect-scrollbar is very tiny but *perfect* (for me, and maybe for the most of developers) jQuery scrollbar plugin.  
 I hope you love this!
 
 Demo: http://noraesae.github.com/perfect-scrollbar/
 
-What means *perfect*?
+What does *perfect* mean?
 ---------------------
 
 *perfect* means...
@@ -67,7 +67,7 @@ To make this plugin *perfect*, some requirements were not avoidable. But they're
 The requirement below is for perfect-scrollbar &lt;= 0.3.4
 
 * there must be the *one* content element(like div) for the container.
- 
+
 Optional parameters
 -------------------
 
@@ -75,14 +75,20 @@ perfect-scrollbar supports optional parameters.
 
 ### wheelSpeed
 The scroll speed applied to mousewheel event.  
-**Default: 10**
+**Default: 1**
 
 ### wheelPropagation
 If this option is true, when the scroll reach the end of the side, mousewheel event will be propagated to parent element.  
+*Currently not supported for touch events*  
 **Default: false**
+
 
 ### minScrollbarLength
 When set to an integer value, the thumb part of the scrollbar will not shrink below that number of pixels.  
+**Default: null**
+
+### maxScrollbarLength
+When set to an integer value, the thumb part of the scrollbar will not expand over that number of pixels.  
 **Default: null**
 
 ### useBothWheelAxes
@@ -110,7 +116,7 @@ The number of pixels the content height can surpass the container height without
 **Default: 0**
 
 ### includePadding
-When set to true, it uses `outerWidth` and `outerHeight` for the container size instead of `width` and `height`. When your container element has non-zero padding and the scrollbar layout looks weird, this option can be helpful.  
+When set to true, it uses `innerWidth` and `innerHeight` for the container size instead of `width` and `height`. When your container element has non-zero padding and the scrollbar layout looks weird, this option can be helpful.  
 **Default: false**
 
 How to Use
@@ -118,7 +124,11 @@ How to Use
 
 ```html
 <style>
-  #Demo { position: 'relative'; }
+  #Demo { 
+    position: 'relative';
+    height: 100%; // Or whatever you want (eg. 400px)
+    overflow: hidden;
+  }
 </style>
 <div id='Demo'>
   <div>
@@ -157,13 +167,6 @@ $("#Demo").perfectScrollbar('update');
 
 Also you can get the informations about how to use the plugin from example codes in the `examples` directory of the source tree.
 
-Very helpful friends
---------------------
-
-perfect-scrollbar supports [jquery-mousewheel](https://github.com/brandonaaron/jquery-mousewheel). If you want to use mousewheel features, please include jquery-mousewheel before using perfect-scrollbar.
-
-If you want to make this plugin's update function more responsive, [jquery-resize](https://github.com/cowboy/jquery-resize) can be helpful.
-
 Contribution
 ------------
 
@@ -197,12 +200,10 @@ If you have any idea to improve this project or any problem using this, please f
 License
 -------
 
-The MIT License (MIT) Copyright (c) 2012 HyeonJe Jun.
+The MIT License (MIT) Copyright (c) 2012, 2014 Hyeonje Alex Jun and other contributors.
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:
 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-
-**It means, you can freely fork and modify this project for commercial or non-comercial use!**
