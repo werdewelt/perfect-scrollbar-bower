@@ -8,6 +8,7 @@
   "description": "Minimalistic but perfect custom scrollbar plugin",
   "main": [
     "css/perfect-scrollbar.css",
+    "js/perfect-scrollbar.jquery.js",
     "js/perfect-scrollbar.js"
   ],
   "license": "MIT",
