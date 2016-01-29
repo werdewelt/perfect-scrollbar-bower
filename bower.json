@@ -15,5 +15,6 @@
   "ignore": [
     "**/.*",
     "bower_components"
-  ]
+  ],
+  "private": true
 }
